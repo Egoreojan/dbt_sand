@@ -10,4 +10,5 @@ select
     zipcode,
     updated_at,
     concat(firstname, ' ', lastname) as customerName
-from l1_landing.customers
+from 
+    {{ source('landing', 'cust') }}

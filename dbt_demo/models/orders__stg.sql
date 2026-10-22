@@ -3,7 +3,7 @@ select
     orderdate,
     customerid,
     employeeid,
-    storeid,
+    storeid::int,
     status as statusCD,
     case
       when (status = '01') then 'In Progress'
@@ -12,4 +12,5 @@ select
       else null
     end AS StatusDesc,
     updated_at
-from l1_landing.orders
+from 
+  {{ source('landing', 'ordr') }}
