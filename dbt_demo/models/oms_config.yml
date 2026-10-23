@@ -1,0 +1,6 @@
+models:
+  - name: customers__stg
+    columns:
+      - name: Email
+        tests:
+          - string_not_empty
